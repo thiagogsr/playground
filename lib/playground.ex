@@ -25,9 +25,8 @@ defmodule Playground do
     {:reply, my_state, my_state}
   end
 
-  def handle_call({:set_the_state, new_state}, _from, my_state) do
-    response = "State changed from #{my_state} to #{new_state}"
-    {:reply, response, new_state}
+  def handle_call({:set_the_state, new_state}, _from, _state) do
+    {:reply, new_state, new_state}
   end
 
   def handle_cast({:set_the_state, new_state}, _state)  do
