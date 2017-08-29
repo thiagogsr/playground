@@ -2,7 +2,8 @@ defmodule Playground do
   use GenServer
 
   def start_link do
-    GenServer.start_link(__MODULE__, "Hello")
+    IO.puts "Starting playground"
+    GenServer.start_link(__MODULE__, [])
   end
 
   def init(initial_data) do
